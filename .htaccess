@@ -1,9 +1,10 @@
-AddDefaultCharset utf-8
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    # Если запрошеное имя не является файлом в текущей структуре
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # Если запрошеное имя не папкой файлом в текущей структуре
+    RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteEngine on
-RewriteBase /
-
-
-RewriteCond % {REQUEST_FILENAME} !-f
-RewriteCond % {REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php
+    # То передаем запросы на index.php
+    RewriteRule ^(.*)$ index.php [PT,L]
+</IfModule>

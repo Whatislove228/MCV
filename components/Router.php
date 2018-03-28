@@ -16,7 +16,7 @@ class Router
 	private function getURI()
 	{
 		if (!empty($_SERVER['REQUEST_URI'])) {
-			return trim(substr($_SERVER['REQUEST_URI'],11,strlen($_SERVER['REQUEST_URI'])));
+			return trim($_SERVER['REQUEST_URI'],'/');
 		}
 	}
 
@@ -28,10 +28,9 @@ class Router
 			if(preg_match("~$uriPattern~", $uri)) {
 
 				$internalRoute = preg_replace("~$uriPattern~", $path,$uri);
+                $segments = explode('/', $internalRoute);
+                $controllerName = array_shift($segments).'Controller';
 
-				$segments = explode('/', $internalRoute);
-
-				$controllerName = array_shift($segments).'Controller';
 				$controllerName = ucfirst($controllerName);
 
 				$actionName = 'action'.ucfirst((array_shift($segments)));
