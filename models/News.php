@@ -31,7 +31,7 @@ class News
      * Returns an array of news items
      */
     public static function getNewsList() {
-
+        
         $db = Db::getConnection();
         $newsList = array();
 
