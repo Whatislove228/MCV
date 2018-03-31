@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3f3d0f90-cc61-480c-bdf8-9df8ad0395a9" name="Default" comment="commit&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/NewsController.php" afterPath="$PROJECT_DIR$/controllers/NewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/News.php" afterPath="$PROJECT_DIR$/models/News.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/js/jquery.scrollUp.min.js" afterPath="$PROJECT_DIR$/template/js/jquery.scrollUp.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/js/main.js" afterPath="$PROJECT_DIR$/template/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/js/price-range.js" afterPath="$PROJECT_DIR$/template/js/price-range.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/header.php" afterPath="$PROJECT_DIR$/views/layouts/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/news/index.php" afterPath="$PROJECT_DIR$/views/news/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/news/view.php" afterPath="$PROJECT_DIR$/views/news/view.php" />
     </list>
     <ignored path="Shop.local.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,8 +88,8 @@
       <file leaf-file-name="News.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+            <state relative-caret-position="540">
+              <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
               <folding>
                 <marker date="1522530636298" expanded="true" signature="285:298" ph="SELECT * FRO... " />
                 <marker date="1522530636298" expanded="true" signature="285:313" ph="SELECT * FRO... news" />
@@ -466,7 +458,7 @@
       <workItem from="1522223637775" duration="5745000" />
       <workItem from="1522440672514" duration="61000" />
       <workItem from="1522440778505" duration="1404000" />
-      <workItem from="1522442316754" duration="7254000" />
+      <workItem from="1522442316754" duration="7647000" />
     </task>
     <task id="LOCAL-00001" summary="commit&#10;">
       <created>1522443171991</created>
@@ -493,7 +485,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61523000" />
+    <option name="totallyTimeSpent" value="61916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="27" width="1305" height="741" extended-state="0" />
@@ -839,8 +831,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+        <state relative-caret-position="540">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <marker date="1522530636298" expanded="true" signature="285:298" ph="SELECT * FRO... " />
             <marker date="1522530636298" expanded="true" signature="285:313" ph="SELECT * FRO... news" />
