@@ -1,5 +1,6 @@
+<?php include ROOT . '/views/layouts/header.php'; ?>
 
-    <!-- end div#menu -->
+<!-- end div#menu -->
     <div id="page">
         <div id="page-bgtop">
             <div id="content">
@@ -19,32 +20,15 @@
 
 
             </div>
-            <!-- end div#content -->
-            <div id="sidebar">
-                <ul>
-                    <li>
-                        <h2 class="categories">Lorem Ipsum</h2>
-                        <ul>
-                            <li><a href="#">Fusce dui neque fringilla</a></li>
-                            <li><a href="#">Eget tempor eget nonummy</a></li>
-                            <li><a href="#">Magna lacus bibendum mauris</a></li>
-                            <li><a href="#">Nec metus sed donec</a></li>
-                            <li><a href="#">Magna lacus bibendum mauris</a></li>
-                            <li><a href="#">Velit semper nisi molestie</a></li>
-                            <li><a href="#">Eget tempor eget nonummy</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+
             <!-- end div#sidebar -->
             <div style="clear: both; height: 1px"></div>
         </div>
     </div>
     <!-- end div#page -->
-    <div id="footer">
-        <p>Copyright &copy; 2007</div>
-    <!-- end div#footer -->
+
 </div>
 <!-- end div#wrapper -->
 </body>
 </html>
+<?php include ROOT . '/views/layouts/footer.php'; ?>

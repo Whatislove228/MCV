@@ -4,12 +4,18 @@ class NewsController
 {
     public function actionIndex()
     {
+        $newsList = array();
+        $newsList = News::getNewsList();
+        $categories = Category::getCategoriesList();
         require_once (ROOT. "/views/news/index.php");
         return true;
     }
-    public function actionView()
+    public function actionView($id)
     {
-        require_once (ROOT. "/views/news/view.php");
+        if($id) {
+            $newsItem = News::getNewsItemByID($id);
+            require_once(ROOT . "/views/news/view.php");
+        }
         return true;
     }
 
