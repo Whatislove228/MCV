@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$" dialect="MySQL" />
+=======
+    <file url="PROJECT" dialect="MySQL" />
+>>>>>>> 3f213e05e4a74359cf0d79c7f5638bffaefa2dda
   </component>
 </project>

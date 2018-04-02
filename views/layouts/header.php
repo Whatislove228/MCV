@@ -91,7 +91,11 @@
                                             <li><a href="/cart/">Корзина</a></li>
                                         </ul>
                                     </li>
+<<<<<<< HEAD
                                     <li><a href="/news/">Блог</a></li>
+=======
+                                    <li><a href="/blog/">Блог</a></li>
+>>>>>>> 3f213e05e4a74359cf0d79c7f5638bffaefa2dda
                                     <li><a href="/about/">О магазине</a></li>
                                     <li><a href="/contacts/">Контакты</a></li>
                                 </ul>
