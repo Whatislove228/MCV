@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="DataSourceManagerImpl" format="xml" hash="2229165652">
-    <data-source source="LOCAL" name="MySQL - phpshop@localhost" uuid="58f9c45d-8842-4b7b-b38c-d61c83b3f554">
-=======
-  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="phpshop@localhost" uuid="d71cf4eb-c6c7-459d-91a7-a9c141c4648c">
->>>>>>> 3f213e05e4a74359cf0d79c7f5638bffaefa2dda
+  <component name="DataSourceManagerImpl" format="xml" hash="2563587314">
+    <data-source source="LOCAL" name="MySQL - phpshop@localhost" uuid="bdaff242-71c1-4cf2-82b6-ef9fd798cdf1">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

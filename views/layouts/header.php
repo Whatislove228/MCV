@@ -13,6 +13,7 @@
         <link href="/template/css/animate.css" rel="stylesheet">
         <link href="/template/css/main.css" rel="stylesheet">
         <link href="/template/css/responsive.css" rel="stylesheet">
+        <link href="/template/css/Style.css" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="/template/js/html5shiv.js"></script>
         <script src="/template/js/respond.min.js"></script>
@@ -62,7 +63,7 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
                                     <li><a href="#"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                    <li><a href="#"><i class="fa fa-lock"></i> Вход</a></li>
+                                    <li><a href="/user/"><i class="fa fa-lock"></i> Вход</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-<<<<<<< HEAD
-    <data-source name="MySQL - phpshop@localhost" uuid="58f9c45d-8842-4b7b-b38c-d61c83b3f554">
+    <data-source name="MySQL - phpshop@localhost" uuid="bdaff242-71c1-4cf2-82b6-ef9fd798cdf1">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <schema-pattern>phpshop.*</schema-pattern>
       <default-schemas>phpshop.*</default-schemas>
-=======
-    <data-source name="phpshop@localhost" uuid="d71cf4eb-c6c7-459d-91a7-a9c141c4648c">
-      <database-info product="MySQL" version="5.6.37" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <introspection-schemas>*:phpshop</introspection-schemas>
->>>>>>> 3f213e05e4a74359cf0d79c7f5638bffaefa2dda
     </data-source>
   </component>
 </project>
