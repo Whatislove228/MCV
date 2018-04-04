@@ -17,6 +17,12 @@ return array(
     'category/([0-9]+)' => 'catalog/category/$1',
 
 	'user/register' => 'user/register',
+	'user/login' => 'user/login',
+	'user/logout' => 'user/logout',
+
+	'account/index' => 'account/index', //actionIndex in AccountController
+
+	'account/edit' => 'account/edit',
 
 	'^/*$' => 'site/index',
 

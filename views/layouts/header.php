@@ -18,7 +18,7 @@
         <script src="/template/js/html5shiv.js"></script>
         <script src="/template/js/respond.min.js"></script>
         <![endif]-->
-        <link rel="shortcut icon" href="/template/images/ico/favicon.ico">
+        <link rel="shortcut icon" href="/template/images/apple.svg">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/template/images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/template/images/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/template/images/ico/apple-touch-icon-72-precomposed.png">
@@ -55,15 +55,21 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <a href="../"><img src="/template/images/home/logo.png" alt="" /></a>
+                                <h1>Apple Inc.</h1>
+                                <!--<a href="../"><img src="/template/images/apple.svg" alt="" /></a>-->
                             </div>
                         </div>
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
-                                    <li><a href="#"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                    <li><a href="/user/"><i class="fa fa-lock"></i> Вход</a></li>
+                                    <?php if(User::isGuest()) :?>
+                                        <li><a href="/user/login"><i class="fa fa-user"></i> Вход</a></li>
+                                        <li><a href="/user/register"><i class="fa fa-lock"></i> Регистрация</a></li>
+                                    <?php else :?>
+                                        <li><a href="/account/index"><i class="fa fa-user"></i> Аккаунт</a></li>
+                                        <li><a href="/user/logout"><i class="fa fa-unlock"></i> Выход</a></li>
+                                    <?php endif;?>
                                 </ul>
                             </div>
                         </div>

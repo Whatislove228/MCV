@@ -1,9 +1,8 @@
 
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
+* {
+	margin: 0;
+	padding: 0;
+}
 
 body {
 	margin: 0;
@@ -371,8 +370,12 @@ img.aligncenter {
 /* Footer */
 
 #footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
 	overflow: hidden;
-	width: 960px;
 	margin: 0px auto 40px auto;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -387,6 +390,10 @@ img.aligncenter {
 
 #footer a {
 	color: #FFFFFF;
+}
+
+.footer-bottom{
+	margin-top:100px;
 }
 
 .form-row {

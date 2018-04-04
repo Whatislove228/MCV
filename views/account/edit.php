@@ -9,14 +9,14 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="message">
                     <?php if($result) :?>
-                    <p>Регистриция прошла успешно</p>
+                        <p>Данные отредактированы!</p>
                     <?php else :?>
                     <?php if(isset($errors) && is_array($errors)) : ?>
-                    <ul>
-                        <?php foreach($errors as $error) : ?>
-                            <li>- <?= $error ?></li>
-                        <?php endforeach; ?>
-                    </ul>
+                        <ul>
+                            <?php foreach($errors as $error) : ?>
+                                <li>- <?= $error ?></li>
+                            <?php endforeach; ?>
+                        </ul>
                         <div class="space">
 
                         </div>

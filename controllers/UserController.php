@@ -37,20 +37,16 @@ class UserController
             $errors[] = "Номер телефона должен быть вида 097 112 67 00";
         }
         if(!User::checkPassword($password)) {
-            $errors[] = "Пароль может содержать латнские буквы и все символы(!№;%:?* и т.д)";
+            $errors[] = "Пароль не может содержать кириллицу";
         }
         if(User::checkEmailExists($email))
         {
             $errors[] = "Такой email уже существует";
         }
-        var_dump($errors);
         if($errors == false)
         {
-            echo "Ok";
             $result = User::register($name,$surname, $email, $password, $phone);
-            header("Location:" . $_SERVER['REQUEST_URI'] );
         }
-
 
 
 
@@ -58,5 +54,59 @@ class UserController
 
         return true;
     }
+    
+    public function actionLogin()
+    {
+
+        $email = "";
+        $password = "";
+
+
+
+        if(isset($_POST['submit']))
+        {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            
+            $errors = false;
+
+            //Validation
+
+            if(!User::checkEmail($email))
+            {
+                $errors[] = "Такого Email не существует";
+            }
+            if(!User::checkPassword($password))
+            {
+                $errors[] = "Пароль не должен быть короче 6 символов";
+            }
+
+            $userId = User::checkUserData($email,$password);
+            if($userId==false)
+            {
+                $errors[] = 'Неправильные данные для входа';
+            }else{
+    
+                User::auth($userId);
+
+                header("Location: /news/");
+            }
+
+
+
+        }
+
+
+        require_once(ROOT . '/views/user/login.php');
+
+        return true;
+    }
+    public function actionLogout()
+    {
+        session_start();
+        unset($_SESSION['user']);
+        header("Location: /");
+    }
+    
 
 }

@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 
 // 2. Подключение файлов системы
 
+session_start();
 define('ROOT', dirname(__FILE__));
 include ROOT . '/components/Autoload.php';
 require_once(ROOT . '/components/Router.php');
