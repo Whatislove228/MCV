@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="view-product">
-                                    <img src="/template/images/product-details/1.jpg" alt="" />
+                                    <img src="/<?php echo $product['image']?>" alt="" />
                                 </div>
                             </div>
                             <div class="col-sm-7">
@@ -40,10 +40,7 @@
                                     <span>US $<?php echo $product['price'];?></span>
                                     <label>Количество:</label>
                                     <input type="text" value="3" />
-                                    <button type="button" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        В корзину
-                                    </button>
+                                    <a href="/cart/add/<?php echo $product['id']?>" data-id ="<?php echo  $product['id']?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                 </span>
                                     <p><b>Наличие:</b> На складе</p>
                                     <p><b>Состояние:</b> Новое</p>

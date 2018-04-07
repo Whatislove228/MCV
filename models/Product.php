@@ -2,7 +2,7 @@
 class Product
 {
 
-    const SHOW_BY_DEFAULT = 9;
+    const SHOW_BY_DEFAULT = 6;
 
     /**
      * Returns an array of products
@@ -78,5 +78,26 @@ class Product
         $row = $result->fetch();
 
         return $row['count'];
+    }
+    public static function getProductsByIds(Array $ids)
+    {
+        $db = Db::getConnection();
+        $id = implode(",",$ids);
+
+        $sql = "SELECT * FROM product WHERE status ='1' AND id IN ($id)";
+
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        $i = 0;
+        while($row = $result->fetch())
+        {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['code'] = $row['code'];
+            $products[$i]['name'] = $row['name'];
+            $products[$i]['price'] = $row['price'];
+            $i++;
+        }
+        return $products;
     }
 }

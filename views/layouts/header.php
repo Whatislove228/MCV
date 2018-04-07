@@ -13,7 +13,7 @@
         <link href="/template/css/animate.css" rel="stylesheet">
         <link href="/template/css/main.css" rel="stylesheet">
         <link href="/template/css/responsive.css" rel="stylesheet">
-        <link href="/template/css/Style.css" rel="stylesheet">
+        <link href="/template/css/Styled.css" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="/template/js/html5shiv.js"></script>
         <script src="/template/js/respond.min.js"></script>
@@ -62,7 +62,7 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+                                    <li><a href="/cart"><i class="fa fa-shopping-cart"></i><span id="cart-count"><?php echo Cart::countItems()?></span> Корзина</a></li>
                                     <?php if(User::isGuest()) :?>
                                         <li><a href="/user/login"><i class="fa fa-user"></i> Вход</a></li>
                                         <li><a href="/user/register"><i class="fa fa-lock"></i> Регистрация</a></li>
