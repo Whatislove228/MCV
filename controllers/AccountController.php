@@ -65,4 +65,10 @@ class AccountController
         require_once (ROOT . '/views/account/edit.php');
         return true;
     }
+    
+    public function actionDelete()
+    {
+        $userId = User::checkLogged();
+        User::delete($userId);
+    }
 }

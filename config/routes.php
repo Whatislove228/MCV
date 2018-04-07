@@ -26,6 +26,7 @@ return array(
 	'account/index' => 'account/index', //actionIndex in AccountController
 
 	'account/edit' => 'account/edit',
+	'account/delete' => 'account/delete',
 
 	'^/*$' => 'site/index',
 

@@ -38,13 +38,13 @@
                                     <p>Код товара: <?php echo $product['code'];?></p>
                                 <span>
                                     <span>US $<?php echo $product['price'];?></span>
-                                    <label>Количество:</label>
-                                    <input type="text" value="3" />
                                     <a href="/cart/add/<?php echo $product['id']?>" data-id ="<?php echo  $product['id']?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                 </span>
+                                    <?php if($product['availability'] == 1): ?>
                                     <p><b>Наличие:</b> На складе</p>
-                                    <p><b>Состояние:</b> Новое</p>
-                                    <p><b>Производитель:</b> D&amp;G</p>
+                                    <?php else :?>
+                                    <p><b>Наличие:</b> Нет на складе</p>
+                                    <?php endif ;?>
                                 </div><!--/product-information-->
                             </div>
                         </div>

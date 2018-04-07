@@ -96,6 +96,7 @@ class Product
             $products[$i]['code'] = $row['code'];
             $products[$i]['name'] = $row['name'];
             $products[$i]['price'] = $row['price'];
+            $products[$i]['availability'] = $row['availability'];
             $i++;
         }
         return $products;

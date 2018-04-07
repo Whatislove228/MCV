@@ -13,6 +13,7 @@
                 <h4>Привет, <?php echo $user['name'];?>!</h4>
                 <ul>
                     <li><a href="/account/edit">Редактировать данные</a></li>
+                    <li><a href="/account/delete">Удалить аккаунт</a></li>
                     <!--<li><a href="/cabinet/history">Список покупок</a></li>-->
                 </ul>
 

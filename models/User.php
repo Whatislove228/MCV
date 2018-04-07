@@ -159,6 +159,17 @@ class User
 
         return $result->execute();
     }
+    public static function delete($id)
+    {
+        $db = Db::getConnection();
+
+        $sql = "DELETE FROM user WHERE id = :id";
+        $result = $db->prepare($sql);
+        $result->bindParam(':id',$id,PDO::PARAM_INT);
+        $result->execute();
+        unset($_SESSION['user']);
+        header("Location: /");
+    }
     
 
 }

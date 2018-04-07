@@ -39,12 +39,6 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="social-icons pull-right">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,7 +50,6 @@
                         <div class="col-sm-4">
                             <div class="logo pull-left">
                                 <h1>Apple Inc.</h1>
-                                <!--<a href="../"><img src="/template/images/apple.svg" alt="" /></a>-->
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -95,7 +88,7 @@
                                     <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="/catalog/">Каталог товаров</a></li>
-                                            <li><a href="/cart/">Корзина</a></li>
+
                                         </ul>
                                     </li>
 
