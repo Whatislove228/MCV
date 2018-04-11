@@ -40,4 +40,71 @@ class CartController
         require_once(ROOT . '/views/cart/index.php');
         return true;
     }
+
+    public function actionCheckout()
+    {
+        // Получием данные из корзины
+        $productsInCart = Cart::getProducts();
+        // Если товаров нет, отправляем пользователи искать товары на главную
+        if ($productsInCart == false) {
+            header("Location: /");
+        }
+        // Список категорий для левого меню
+        $categories = Category::getCategoriesList();
+        // Находим общую стоимость
+        $productsIds = array_keys($productsInCart);
+        $products = Product::getProductsByIds($productsIds);
+        $totalPrice = Cart::getTotalPrice($products);
+        // Количество товаров
+        $totalQuantity = Cart::countItems();
+        // Поля для формы
+        $userName = false;
+        $userPhone = false;
+        $userComment = false;
+        // Статус успешного оформления заказа
+        $result = false;
+        // Проверяем является ли пользователь гостем
+        if (!User::isGuest()) {
+            // Если пользователь не гость
+            // Получаем информацию о пользователе из БД
+            $userId = User::checkLogged();
+            $user = User::getUserById($userId);
+            $userName = $user['name'];
+        } else {
+            // Если гость, поля формы останутся пустыми
+            $userId = 0;
+        }
+        // Обработка формы
+        if (isset($_POST['submit'])) {
+            // Если форма отправлена
+            // Получаем данные из формы
+            $userName = $_POST['name'];
+            $userPhone = $_POST['phone'];
+            $userComment = $_POST['message'];
+            // Флаг ошибок
+            $errors = false;
+            // Валидация полей
+            if (!User::checkName($userName)) {
+                $errors[] = 'Неправильное имя';
+            }
+            if (!User::checkPhone($userPhone)) {
+                $errors[] = 'Неправильный телефон';
+            }
+            if ($errors == false) {
+                // Если ошибок нет
+                // Сохраняем заказ в базе данных
+                $result = Order::save($userName, $userPhone, $userComment, $userId, $productsInCart);
+                Cart::clear();
+                ?>
+                <script>
+                setTimeout('location.replace("/")', 3000);
+                </script>
+
+            <?php
+            }
+        }
+        // Подключаем вид
+        require_once(ROOT . '/views/cart/checkout.php');
+        return true;
+    }
 }

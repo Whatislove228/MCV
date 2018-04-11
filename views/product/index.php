@@ -36,7 +36,7 @@
                                         <img src="<?php  echo $product['image'];?>" alt="" />
                                         <h2><?php echo $product['price'];?>$</h2>
                                         <p>
-                                            <a href="index.php/product/<?php echo $product['id'];?>">
+                                            <a href="/product/<?php echo $product['id'];?>">
                                                 <?php echo $product['name'];?>
                                             </a>
                                         </p>

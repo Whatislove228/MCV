@@ -111,7 +111,7 @@ class User
         {
             return $_SESSION['user'];
         }
-        header("Location: /user/login");
+        //header("Location: /user/login");
     }
     
     public static function isGuest()
@@ -168,7 +168,6 @@ class User
         $result->bindParam(':id',$id,PDO::PARAM_INT);
         $result->execute();
         unset($_SESSION['user']);
-        header("Location: /");
     }
     
 
