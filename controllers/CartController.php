@@ -70,6 +70,7 @@ class CartController
             $userId = User::checkLogged();
             $user = User::getUserById($userId);
             $userName = $user['name'];
+            $userPhone = $user['phone'];
         } else {
             // Если гость, поля формы останутся пустыми
             $userId = 0;
@@ -106,5 +107,12 @@ class CartController
         // Подключаем вид
         require_once(ROOT . '/views/cart/checkout.php');
         return true;
+    }
+
+    public function actionDelete($id)
+    {
+        Cart::deleteProduct($id);
+
+        header("Location: /cart/");
     }
 }

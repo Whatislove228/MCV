@@ -18,6 +18,7 @@ return array(
     'cart/add/([0-9]+)' => 'cart/add/$1',
     'cart/addAjax/([0-9]+)' => 'cart/addAjax/$1',
     'cart/checkout' => 'cart/checkout',
+    'cart/delete/([0-9]+)' => 'cart/delete/$1',
     'cart' => 'cart/index',
 
 	'user/register' => 'user/register',

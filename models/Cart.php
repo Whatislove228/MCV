@@ -85,5 +85,16 @@ class Cart
             unset($_SESSION['products']);
         }
     }
+
+    /**
+     * @param $id
+     */
+    public static function deleteProduct($id)
+    {
+        $productInCart = self::getProducts();
+        unset($productInCart[$id]);
+        //Write in the session new array of product in cart
+        $_SESSION['products'] = $productInCart;
+    }
 }
 

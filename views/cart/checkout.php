@@ -66,7 +66,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_phone">Phone *</label>
-                                        <input id="form_phone" type="tel" name="phone" value = "" class="form-control" required="required" placeholder="Please enter your phone">
+                                        <input id="form_phone" type="tel" name="phone" value = "<?php $userPhone ?>" class="form-control" required="required" placeholder="Please enter your phone">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
