@@ -32,11 +32,13 @@ class News
     /**
      * Returns an array of news items
      */
-    public static function getNewsList() {
+    public static function getNewsList($page) {
 
+        $limit = Product::SHOW_BY_DEFAULT;
+        $offset = ($page - 1) * $limit;
         $db = Db::getConnection();
         $newsList = array();
-        $result = $db->query('SELECT id, title, date, author_name,preview ,short_content FROM news ORDER BY id ASC LIMIT 10');
+        $result = $db->query("SELECT id, title, date, author_name,preview ,short_content FROM news ORDER BY id ASC LIMIT ". $limit ."  OFFSET " . $offset);
 
         $i = 0;
         while($row = $result->fetch()) {
@@ -51,6 +53,16 @@ class News
 
         return $newsList;
 
+    }
+
+    public static function getTotalNewsCount()
+    {
+        $db = Db::getConnection();
+
+        $result  = $db->query("SELECT count(id) AS count FROM phpshop.news");
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $result->fetch();
+        return $row['count'];
     }
 
 }

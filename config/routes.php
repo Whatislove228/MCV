@@ -5,7 +5,8 @@ return array(
 
 	'product/([0-9]+)' => 'product/view/$1',
 
-    'news/([0-9]+)' => 'news/view/$1',
+	'news/page-([0-9]+)' => 'news/index/$1',
+	'news/([0-9]+)' => 'news/view/$1',
 	'news' => 'news/index',
 
     'blog/([0-9]+)' => 'blog/view/$1',

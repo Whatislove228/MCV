@@ -49,6 +49,7 @@ class Pagination
      * 
      * @return
      */
+    
     public function __construct($total, $currentPage, $limit, $index)
     {
         # Устанавливаем общее количество записей

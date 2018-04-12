@@ -34,6 +34,7 @@
                             <ul>
                                 <li><i class="fa fa-calendar"></i><?= $news['date']?></li>
                                 <li><i class="fa fa-calendar"></i><?= $news['author_name']?></li>
+                                <li><i class="fa fa-calendar"></i><?= $news['id']?></li>
                             </ul>
                         </div>
                         <a href="">
@@ -44,20 +45,20 @@
                         <?php endforeach;?>
                     </div>
 
-                    <div class="pagination-area">
-                        <ul class="pagination">
-                            <li><a href="" class="active">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href=""><i class="fa fa-angle-double-right"></i></a></li>
-                        </ul>
+                    <div class="pagination">
+                        <?php echo $pagination->get() ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+<style>
+    .pagination
+    {
+        margin-top: 10px;
+    }
+</style>
 
 </body>
 </html>
