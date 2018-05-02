@@ -2,6 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="MySQL - phpshop@localhost" uuid="bdaff242-71c1-4cf2-82b6-ef9fd798cdf1">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
     </data-source>

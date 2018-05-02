@@ -1,8 +1,12 @@
 <?php
 
 return array(
-    "host" => "127.0.0.1",
+    /*"host" => "localhost",
+    "dbname" => "o50648bx_phpshop",
+    "user" => "o50648bx_phpshop",
+    "password" => "56584978"*/
+    "host" => "localhost",
     "dbname" => "phpshop",
     "user" => "root",
-    "password" => "56584978"
+    "password" => "root"
 );

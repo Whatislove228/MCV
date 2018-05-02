@@ -47,9 +47,7 @@ class UserController
         {
             $result = User::register($name,$surname, $email, $password, $phone);
         }
-
-
-
+       
         require_once(ROOT . '/views/user/register.php');
 
         return true;

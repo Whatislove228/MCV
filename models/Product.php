@@ -101,4 +101,11 @@ class Product
         }
         return $products;
     }
+    public static function commentSave($productid,$userid,$name,$textcomment)
+    {
+        $db = Db::getConnection();
+        $sql = "INSERT INTO `comment` (product_id,user_id,commentator_name,comment_text) VALUE('$productid','$userid','$name','$textcomment')";
+        $result = $db->prepare($sql);
+        return $result->execute();
+    }
 }

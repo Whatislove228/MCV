@@ -2,7 +2,7 @@
 return array(
 
 
-
+	'product/([0-9]+)/page-([0-9]+)' => 'product/view/$1/$2',
 	'product/([0-9]+)' => 'product/view/$1',
 
 	'news/page-([0-9]+)' => 'news/index/$1',
@@ -25,11 +25,36 @@ return array(
 	'user/register' => 'user/register',
 	'user/login' => 'user/login',
 	'user/logout' => 'user/logout',
+	'user/([0-9]+)/page-([0-9]+)' => 'product/usercomment/$1/$2',
 
 	'account/index' => 'account/index', //actionIndex in AccountController
 
 	'account/edit' => 'account/edit',
 	'account/delete' => 'account/delete',
+
+	'comment/([0-9]+)' => 'product/comment/$1',
+    'respect/([0-9]+)/([0-9]+)' => 'product/respect/$1/$2',
+	'user/([0-9]+)' => 'product/usercomment/$1',
+
+	'admin/product/create' => 'adminProduct/create',
+	'admin/product/update' => 'adminProduct/update/$1',
+	'admin/product/delete' => 'adminProduct/delete/$1',
+	'admin/product' => 'adminProduct/index',
+
+
+	/*'admin/product/create' => 'adminProduct/create',
+	'admin/product/update' => 'adminProduct/update/$1',
+	'admin/product/delete' => 'adminProduct/delete/$1',
+	'admin/product' => 'adminProduct/index',
+*/
+	
+
+	'admin/category/create' => 'adminCategory/create',
+	'admin/category/update' => 'adminCategory/update/$1',
+	'admin/category/delete' => 'adminCategory/delete/$1',
+	'admin/category' => 'adminCategory/index',
+
+	'admin' => 'admin/index',
 	
 
 	'^/*$' => 'site/index',

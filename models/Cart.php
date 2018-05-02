@@ -91,10 +91,16 @@ class Cart
      */
     public static function deleteProduct($id)
     {
-        $productInCart = self::getProducts();
-        unset($productInCart[$id]);
-        //Write in the session new array of product in cart
-        $_SESSION['products'] = $productInCart;
+        $productsInCart = [];
+        $productsInCart = $_SESSION['products'];
+        if(array_key_exists($id, $productsInCart)) {
+            $productsInCart[$id]--;
+        }
+        if($productsInCart[$id]<=0){
+            unset($productsInCart[$id]);
+        }
+        $_SESSION['products'] = $productsInCart;
+        return self::countItems();
     }
 }
 
