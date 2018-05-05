@@ -17,8 +17,6 @@ class News
 
             $db = Db::getConnection();
             $result = $db->query('SELECT * FROM news WHERE id=' . $id);
-            
-            $result->setFetchMode(PDO::FETCH_ASSOC);
 
             $newsItem = $result->fetch();
 
@@ -33,12 +31,16 @@ class News
      * Returns an array of news items
      */
     public static function getNewsList($page) {
-
         $limit = Product::SHOW_BY_DEFAULT;
         $offset = ($page - 1) * $limit;
+        if(isset($_POST['button'])) {
+            $flag = $_POST['button'];
+        }else {
+            $flag = 'id';
+        }
         $db = Db::getConnection();
         $newsList = array();
-        $result = $db->query("SELECT id, title, date, author_name,preview ,short_content FROM news ORDER BY id ASC LIMIT ". $limit ."  OFFSET " . $offset);
+        $result = $db->query("SELECT id, title, date, author_name,preview ,short_content FROM news ORDER BY $flag DESC LIMIT ". $limit ."  OFFSET " . $offset);
 
         $i = 0;
         while($row = $result->fetch()) {
@@ -63,6 +65,30 @@ class News
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $row = $result->fetch();
         return $row['count'];
+    }
+    public static function dataSort($page)
+    {
+        $limit = Product::SHOW_BY_DEFAULT;
+        $offset = ($page - 1) * $limit;
+        $db = Db::getConnection();
+        $limit = Product::SHOW_BY_DEFAULT;
+        $offset = ($page - 1) * $limit;
+        $db = Db::getConnection();
+        $newsList = array();
+        $result = $db->query("SELECT id, title, date, author_name,preview ,short_content FROM news ORDER BY data ASC LIMIT ". $limit ."  OFFSET " . $offset);
+
+        $i = 0;
+        while($row = $result->fetch()) {
+            $newsList[$i]['id'] = $row['id'];
+            $newsList[$i]['title'] = $row['title'];
+            $newsList[$i]['date'] = $row['date'];
+            $newsList[$i]['author_name'] = $row['author_name'];
+            $newsList[$i]['preview'] = $row['preview'];
+            $newsList[$i]['short_content'] = $row['short_content'];
+            $i++;
+        }
+
+        return $newsList;
     }
 
 }

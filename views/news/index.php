@@ -27,6 +27,14 @@
             <div class="col-sm-9">
                 <div class="blog-post-area">
                     <h2 class="title text-center">Последние записи в блоге</h2>
+                    <form method="POST">
+                    <div class="dropdown">
+                        <a data-toggle="dropdown" href="#">Отсортировать <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li><button type = "submit" name = "button" value="date">По дате</button></li>
+                        </ul>
+                    </div>
+                    </form>
                     <div class="single-blog-post">
                         <?php foreach ($newsList as $news) :?>
                         <h3><?= $news['title']?></h3>

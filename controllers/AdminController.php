@@ -1,18 +1,19 @@
 <?php
-
 /**
- * Created by PhpStorm.
- * User: vlad
- * Date: 12.04.18
- * Time: 23:31
+ * Контроллер AdminController
+ * Главная страница в админпанели
  */
-class AdminController extends  AdminBase
+class AdminController extends AdminBase
 {
+    /**
+     * Action для стартовой страницы "Панель администратора"
+     */
     public function actionIndex()
     {
+        // Проверка доступа
         self::checkAdmin();
-        
-        require_once (ROOT."/views/admin/index.php");
+        // Подключаем вид
+        require_once(ROOT . '/views/admin/index.php');
         return true;
     }
 }

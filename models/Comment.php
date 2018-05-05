@@ -19,24 +19,25 @@ class Comment
     }
     public static function showComment($productId,$page = 1)
     {
+
         $page = intval($page);
         $offset = ($page - 1) * 6;
         $db = Db::getConnection();
         $result = $db->query("SELECT id, product_id, user_id, commentator_name,comment_data ,comment_text,respect FROM `comment` WHERE product_id = $productId ORDER BY respect DESC LIMIT 6 OFFSET $offset");
-
         $i = 0;
-        while($row = $result->fetch()) {
-            $commentList[$i]['id'] = $row['id'];
-            $commentList[$i]['product_id'] = $row['product_id'];
-            $commentList[$i]['user_id'] = $row['user_id'];
-            $commentList[$i]['commentator_name'] = $row['commentator_name'];
-            $commentList[$i]['comment_data'] = $row['comment_data'];
-            $commentList[$i]['comment_text'] = $row['comment_text'];
-            $commentList[$i]['respect'] = $row['respect'];
-            $i++;
+        if($result) {
+            while ($row = $result->fetch()) {
+                $commentList[$i]['id'] = $row['id'];
+                $commentList[$i]['product_id'] = $row['product_id'];
+                $commentList[$i]['user_id'] = $row['user_id'];
+                $commentList[$i]['commentator_name'] = $row['commentator_name'];
+                $commentList[$i]['comment_data'] = $row['comment_data'];
+                $commentList[$i]['comment_text'] = $row['comment_text'];
+                $commentList[$i]['respect'] = $row['respect'];
+                $i++;
+            }
+            return $commentList;
         }
-
-        return $commentList;
     }
     public static function countCommentByProductId($productId)
     {

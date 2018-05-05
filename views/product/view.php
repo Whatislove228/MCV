@@ -107,6 +107,7 @@
     <!--COMMENTS-->
     <div class="comments">
         <h3 class="title-comments">Комментарии (<?= $count?>)</h3>
+        <?php if(isset($commentList)) :?>
         <?php foreach ($commentList as $comment) :?>
         <ul class="media-list">
             <li class="media">
@@ -134,6 +135,9 @@
             <?php endforeach ;?>
 
 <?php echo $pagination->get(); ?>
+    <?php else :?>
+<p1>Комментариев пока нет!</p1>
+<?php endif; ?>
 
 
 

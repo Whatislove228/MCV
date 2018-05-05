@@ -4,7 +4,6 @@ class NewsController
 {
     public function actionIndex($page = 1)
     {
-
         $newsList = array();
         $newsList = News::getNewsList($page);
         $categories = Category::getCategoriesList();
