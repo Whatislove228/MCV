@@ -70,7 +70,6 @@ class CartController
             $userId = User::checkLogged();
             $user = User::getUserById($userId);
             $userName = $user['name'];
-            $userPhone = $user['phone'];
         } else {
             // Если гость, поля формы останутся пустыми
             $userId = 0;
@@ -87,9 +86,6 @@ class CartController
             // Валидация полей
             if (!User::checkName($userName)) {
                 $errors[] = 'Неправильное имя';
-            }
-            if (!User::checkPhone($userPhone)) {
-                $errors[] = 'Неправильный телефон';
             }
             if ($errors == false) {
                 // Если ошибок нет

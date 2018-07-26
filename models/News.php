@@ -61,7 +61,7 @@ class News
     {
         $db = Db::getConnection();
 
-        $result  = $db->query("SELECT count(id) AS count FROM phpshop.news");
+        $result  = $db->query("SELECT count(id) AS count FROM news");
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $row = $result->fetch();
         return $row['count'];

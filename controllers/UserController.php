@@ -9,7 +9,6 @@ class UserController
         $name =  '';
         $surname =  '';
         $password =  '';
-        $phone =  '';
         $email =  '';
         $result = false;
 
@@ -18,7 +17,6 @@ class UserController
             $name = $_POST['name'];
             $surname = $_POST['surname'];
             $password = $_POST['password'];
-            $phone = $_POST['phone'];
             $email = $_POST['email'];
 
 
@@ -33,9 +31,7 @@ class UserController
         if(!User::checkEmail($email)) {
             $errors[] = "Email должен быть вида vasya@gmail.com";
         }
-        if(!User::checkPhone($phone)) {
-            $errors[] = "Номер телефона должен быть вида 097 112 67 00";
-        }
+
         if(!User::checkPassword($password)) {
             $errors[] = "Пароль не может содержать кириллицу";
         }
@@ -45,7 +41,7 @@ class UserController
         }
         if($errors == false)
         {
-            $result = User::register($name,$surname, $email, $password, $phone);
+            $result = User::register($name,$surname, $email, $password);
         }
        
         require_once(ROOT . '/views/user/register.php');
@@ -94,14 +90,14 @@ class UserController
 
         }
 
-
+        $admin =AdminBase::checkAdmin();
         require_once(ROOT . '/views/user/login.php');
 
         return true;
     }
     public function actionLogout()
     {
-        
+
         unset($_SESSION['user']);
         header("Location: /");
     }

@@ -12,7 +12,7 @@ class Order
     {
         $db = Db::getConnection();
 
-        $sql = "INSERT INTO phpshop.product_order (user_name, user_phone, user_comment, user_id,  products) "
+        $sql = "INSERT INTO product_order (user_name, user_phone, user_comment, user_id,  products) "
             . "VALUES (:user_name, :user_phone, :user_comment, :user_id,  :products)";
 
         $products = json_encode($products);

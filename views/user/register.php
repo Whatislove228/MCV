@@ -67,13 +67,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_phone">Phone</label>
-                                    <input id="form_phone" type="tel" name="phone" value = "<?php echo $phone ?>" class="form-control" placeholder="Please enter your phone">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
+
                         </div>
 
                         <div class="row">

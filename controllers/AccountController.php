@@ -25,7 +25,6 @@ class AccountController
         $surname = $user['surname'];
         $email = $user['email'];
         $password = $user['password'];
-        $phone = $user['phone'];
 
         $result = false;
 
@@ -35,7 +34,6 @@ class AccountController
             $surname = $_POST['surname'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $phone = $_POST['phone'];
 
             $errors = false;
 
@@ -48,16 +46,13 @@ class AccountController
             if(!User::checkEmail($email)) {
                 $errors[] = "Email должен быть вида vasya@gmail.com";
             }
-            if(!User::checkPhone($phone)) {
-                $errors[] = "Номер телефона должен быть вида 097 112 67 00";
-            }
             if(!User::checkPassword($password)) {
                 $errors[] = "Пароль не может содержать кириллицу";
             }
             
             if($errors == false)
             {
-                $result = User::edit($userId,$name,$surname, $email, $password, $phone);
+                $result = User::edit($userId,$name,$surname, $email, $password);
             }
         }
 

@@ -9,19 +9,18 @@
 class User
 {
 
-    public static function register($name,$surname, $email, $password, $phone) {
+    public static function register($name,$surname, $email, $password) {
 
         $db = Db::getConnection();
 
-        $sql = 'INSERT INTO user (name,surname, email, password, phone) '
-            . 'VALUES (:name,:surname, :email, :password, :phone)';
+        $sql = 'INSERT INTO user (name,surname, email, password) '
+            . 'VALUES (:name,:surname, :email, :password)';
 
         $result = $db->prepare($sql);
         $result->bindParam(':name', $name, PDO::PARAM_STR);
         $result->bindParam(':surname', $surname, PDO::PARAM_STR);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->bindParam(':password', $password, PDO::PARAM_STR);
-        $result->bindParam(':phone', $phone, PDO::PARAM_STR);
 
         return $result->execute();
     }
@@ -50,15 +49,7 @@ class User
         }
         return false;
     }
-    public static function checkPhone($phone)
-    {
 
-        if(strlen($phone) == 10)
-        {
-            return true;
-        }
-        return false;
-    }
     public static function checkEmail($email)
     {
         if($email)
@@ -141,10 +132,10 @@ class User
         }
     }
 
-    public static function edit($id, $name, $surname,$email,$password,$phone)
+    public static function edit($id, $name, $surname,$email,$password)
     {
         $db = Db::getConnection();
-        $sql = "UPDATE user SET name = :name,surname = :surname, email = :email, password = :password, phone = :phone WHERE id = :id";
+        $sql = "UPDATE user SET name = :name,surname = :surname, email = :email, password = :password WHERE id = :id";
 
         $result = $db->prepare($sql);
 
@@ -153,7 +144,6 @@ class User
         $result->bindParam(':surname',$surname,PDO::PARAM_STR);
         $result->bindParam(':email',$email,PDO::PARAM_STR);
         $result->bindParam(':password',$password,PDO::PARAM_STR);
-        $result->bindParam(':phone',$phone,PDO::PARAM_STR);
 
 
 
