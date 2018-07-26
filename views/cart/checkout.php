@@ -66,11 +66,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_phone">Phone *</label>
-                                        <input id="form_phone" type="tel" name="phone" value = "" class="form-control" required="required" placeholder="Please enter your phone">
+                                        <input id="form_phone" type="tel" name="phone" value = "" class="form-control phone" required="required" placeholder="Please enter your phone">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-
 
                                 <div class="col-md-12">
                                     <div class="form-group">

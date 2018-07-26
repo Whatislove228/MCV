@@ -14,10 +14,9 @@
         <link href="/template/css/main.css" rel="stylesheet">
         <link href="/template/css/responsive.css" rel="stylesheet">
         <link href="/template/css/Styled.css" rel="stylesheet">
-        <!--[if lt IE 9]>
-        <script src="/template/js/html5shiv.js"></script>
-        <script src="/template/js/respond.min.js"></script>
-        <![endif]-->
+        <script src="/template/js/jquery.js" type="text/javascript"></script>
+        <script src="/template/js/jquery.maskedinput.min.js" type="text/javascript"></script>
+        <script src="/template/js/main.js" type="text/javascript"></script>
         <link rel="shortcut icon" href="/template/images/apple.svg">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/template/images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/template/images/ico/apple-touch-icon-114-precomposed.png">
@@ -85,13 +84,7 @@
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
                                     <li><a href="/">Главная</a></li>
-                                    <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
-                                        <ul role="menu" class="sub-menu">
-                                            <li><a href="/catalog/">Каталог товаров</a></li>
-                                            <li><a href="/catalog/">Склад</a></li>
-                                        </ul>
-                                    </li>
-
+                                    <li><a href="/catalog/">Магазин</a>
                                     <li><a href="/news/">Блог</a></li>
                                     <li><a href="/about/">О магазине</a></li>
                                     <li><a href="/contacts/">Контакты</a></li>
