@@ -15,6 +15,7 @@
 * .rar
 * .tar
 * .zip
+.idea
 
 *.журнал
 * .sql
