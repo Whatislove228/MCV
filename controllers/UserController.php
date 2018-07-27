@@ -90,7 +90,6 @@ class UserController
 
         }
 
-        $admin =AdminBase::checkAdmin();
         require_once(ROOT . '/views/user/login.php');
 
         return true;

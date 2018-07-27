@@ -19,7 +19,7 @@ class Comment
     }
     public static function showComment($productId,$page = 1)
     {
-
+        $commentList = array();
         $page = intval($page);
         $offset = ($page - 1) * 6;
         $db = Db::getConnection();

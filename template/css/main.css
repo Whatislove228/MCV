@@ -1543,7 +1543,6 @@ h2.title {
 }
 
 .breadcrumbs .breadcrumb li a:after {
-  content:"";
   height:auto;
   width: auto;
   border-width: 8px;
@@ -2519,5 +2518,14 @@ h2.title {
 .contact-info .social-networks ul li a:hover{
   color: #FE980F;
 }
-
+.footer-text{
+  text-align: center;
+}
+.commnets-title{
+  font-size: 2.5em;
+}
+.commnets-list {
+  font-size: 1.5em;
+  text-align: center;
+}
 

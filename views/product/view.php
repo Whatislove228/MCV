@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div><!--/product-details-->
-                    <h1>Коментарии</h1>
+                    <p class="commnets-title">Коментарии</p>
                     <h1 class="text-center"></h1>
                     <div class="message">
                         <?php if(isset($errors) && is_array($errors)) : ?>
@@ -100,44 +100,47 @@
 
                                 </div>
                             </div>
+                        </div>
+                        <div class="comments">
+                            <p class="commnets-list">Комментарии (<?= $count?>)</p>
+                            <?php if(isset($commentList)) :?>
+                            <?php foreach ($commentList as $comment) :?>
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-body">
+                                        <div class="media-heading">
+                                            <a href="/user/<?=$comment['user_id'] ?>" class="author">Имя: <?= $comment['commentator_name'] ?></a>
+                                            <div class="metadata">
+                                                <span class="date"><?= $comment['comment_data'] ?></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="media-text text-justify"><?= $comment['comment_text'] ?></div>
+                                <div class="footer-comment">
+                                <span class="vote plus" title="Нравится">
+
+                                </span>
+                                    <span class="rating">
+                            <a href="../respect/<?=$product['id'] ?>/<?= $comment['id'] ?>" class="rating"><i class="fa fa-thumbs-up"></i><?= $comment['respect'] ?>+</a>
+                        </span>
+                                </div>
+                        </div>
                 </div>
+                <hr>
+                <?php endforeach ;?>
+
+                <?php echo $pagination->get(); ?>
+                <?php else :?>
+                    <p1>Комментариев пока нет!</p1>
+                <?php endif; ?>
             </div>
+
         </div>
+
     </section>
     <!--COMMENTS-->
-    <div class="comments">
-        <h3 class="title-comments">Комментарии (<?= $count?>)</h3>
-        <?php if(isset($commentList)) :?>
-        <?php foreach ($commentList as $comment) :?>
-        <ul class="media-list">
-            <li class="media">
-                <div class="media-body">
-                    <div class="media-heading">
-                        <a href="/user/<?=$comment['user_id'] ?>" class="author">Имя: <?= $comment['commentator_name'] ?></a>
-                        <div class="metadata">
-                            <span class="date"><?= $comment['comment_data'] ?></span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-                    <div class="media-text text-justify"><?= $comment['comment_text'] ?></div>
-                    <div class="footer-comment">
-        <span class="vote plus" title="Нравится">
-          <i class="fa fa-thumbs-up"></i>
-        </span>
-                        <span class="rating">
-                            <a href="../respect/<?=$product['id'] ?>/<?= $comment['id'] ?>" class="rating"><?= $comment['respect'] ?>+</a>
-        </span>
-                    </div>
-                </div>
-        </div>
-    <hr>
-            <?php endforeach ;?>
 
-<?php echo $pagination->get(); ?>
-    <?php else :?>
-<p1>Комментариев пока нет!</p1>
-<?php endif; ?>
 
 
 
