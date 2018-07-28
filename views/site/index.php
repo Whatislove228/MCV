@@ -33,7 +33,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="<?php  echo $product['image'];?>" alt="" />
+                                            <a href="/product/<?php echo $product['id'];?>"><img src="/upload/images/products/<?=$product['id']?>.jpg" alt="" /></a>
                                             <h2><?php echo $product['price'];?>$</h2>
                                             <p>
                                                 <a href="/product/<?php echo $product['id'];?>">

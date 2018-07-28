@@ -13,9 +13,8 @@
         <link href="/template/css/animate.css" rel="stylesheet">
         <link href="/template/css/main.css" rel="stylesheet">
         <link href="/template/css/responsive.css" rel="stylesheet">
-        <link href="/template/css/Styled.css" rel="stylesheet">
         <script src="/template/js/jquery.js" type="text/javascript"></script>
-        <script src="/template/js/jquery.maskedinput.min.js" type="text/javascript"></script>
+        <script src="/template/js/jquery.maskedinput.js" type="text/javascript"></script>
         <script src="/template/js/main.js" type="text/javascript"></script>
         <link rel="shortcut icon" href="/template/images/apple.svg">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/template/images/ico/apple-touch-icon-144-precomposed.png">
@@ -48,7 +47,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <h1>Apple Inc.</h1>
+                                <a href="/"><p>Company Inc.</p></a>
                             </div>
                         </div>
                         <div class="col-sm-8">

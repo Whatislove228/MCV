@@ -159,6 +159,7 @@
 }
 
 .mainmenu{
+	border-radius: 20px;
 	width: 100%;
 }
 
@@ -348,9 +349,12 @@ ul.sub-menu{
 .mainmenu{
 	width: 100%;
 }
+.mainmenu ul {
+	border-radius: 8px;
+}
 
 .mainmenu ul li{
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0 , 1);
     padding-top: 15px;
 	padding-bottom: 0;
 }
