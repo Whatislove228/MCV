@@ -2541,4 +2541,12 @@ h2.title {
   font-size: 1.5em;
   text-align: center;
 }
+.solved {
+  color: #ff0000;
+  background:#fff;
+  border-radius: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
 

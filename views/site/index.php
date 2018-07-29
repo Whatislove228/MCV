@@ -40,7 +40,11 @@
                                                     <?php echo $product['name'];?>
                                                 </a>
                                             </p>
-                                            <a href="#" data-id ="<?php echo  $product['id']?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                            <?php if($product['availability'] == 1): ?>
+                                                <a href="/cart/add/<?php echo $product['id']?>" data-id ="<?php echo  $product['id']?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                            <?php else :?>
+                                                <div class="btn btn-default solved">Нет в наличии</div>
+                                            <?php endif ;?>
                                         </div>
                                         <?php if ($product['is_new']): ?>
                                             <img src="/template/images/home/new.png" class="new" alt="" />

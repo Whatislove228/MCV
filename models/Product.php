@@ -13,9 +13,9 @@ class Product
         $db = Db::getConnection();
         $productsList = array();
 
-        $result = $db->query('SELECT id, name, price, image, is_new FROM product '
+        $result = $db->query('SELECT * FROM product '
             . 'WHERE status = "1"'
-            . 'ORDER BY id DESC '
+            . 'ORDER BY availability DESC '
             . 'LIMIT ' . $count);
 
         $i = 0;
@@ -23,6 +23,7 @@ class Product
             $productsList[$i]['id'] = $row['id'];
             $productsList[$i]['name'] = $row['name'];
             $productsList[$i]['image'] = $row['image'];
+            $productsList[$i]['availability'] = $row['availability'];
             $productsList[$i]['price'] = $row['price'];
             $productsList[$i]['is_new'] = $row['is_new'];
             $i++;
@@ -37,9 +38,9 @@ class Product
         $products = array();
         $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 
-        $result = $db->query('SELECT id, name, price, image, is_new FROM product '
+        $result = $db->query('SELECT id, name, price, image,availability ,is_new FROM product '
             . "WHERE status = '1' AND category_id = '$categoryId' "
-            . 'ORDER BY id ASC '
+            . 'ORDER BY availability DESC '
             . 'LIMIT ' . self::SHOW_BY_DEFAULT
             . ' OFFSET ' . $offset);
 
@@ -48,6 +49,7 @@ class Product
             $products[$i]['id'] = $row['id'];
             $products[$i]['name'] = $row['name'];
             $products[$i]['image'] = $row['image'];
+            $products[$i]['availability'] = $row['availability'];
             $products[$i]['price'] = $row['price'];
             $products[$i]['is_new'] = $row['is_new'];
             $i++;
@@ -83,7 +85,7 @@ class Product
     {
         $db = Db::getConnection();
         $id = implode(",",$ids);
-
+        $products = array();
         $sql = "SELECT * FROM product WHERE status ='1' AND id IN ($id)";
 
         $result = $db->query($sql);

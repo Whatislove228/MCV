@@ -38,7 +38,11 @@
                                     <p>Код товара: <?php echo $product['code'];?></p>
                                 <span>
                                     <span>US $<?php echo $product['price'];?></span>
-                                    <a href="/cart/add/<?php echo $product['id']?>" data-id ="<?php echo  $product['id']?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                     <?php if($product['availability'] == 1): ?>
+                                         <a href="/cart/add/<?php echo $product['id']?>" data-id ="<?php echo  $product['id']?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                     <?php else :?>
+                                         <div class="btn btn-default solved">Нет в наличии</div>
+                                     <?php endif ;?>
                                 </span>
                                     <?php if($product['availability'] == 1): ?>
                                     <p><b>Наличие:</b> На складе</p>
