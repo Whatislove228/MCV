@@ -1,7 +1,7 @@
 <?php
 return array(
 
-
+    'contacts' => 'contacts/index',
 	'product/([0-9]+)/page-([0-9]+)' => 'product/view/$1/$2',
 	'product/([0-9]+)' => 'product/view/$1',
 

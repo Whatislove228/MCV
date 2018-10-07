@@ -90,54 +90,48 @@
                         <div class="messages"></div>
 
                         <div class="controls">
-
-                            <div class="row">
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Textarea</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="text-area" rows="3" required="required" data-error="Lastname is required"></textarea>
                                 </div>
-                                <div class="row">
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-2">
                                         <input type="submit" name="submit" class="btn btn-success btn-send" value="Send message">
                                     </div>
 
-                                </div>
-                            </div>
+                                <p class="commnets-list">Комментарии (<?= $count?>)</p>
+
                         </div>
-                        <div class="comments">
-                            <p class="commnets-list">Комментарии (<?= $count?>)</p>
-                            <?php if(isset($commentList)) :?>
+                    </form>
+                    <div class="comments">
+                        <?php if(isset($commentList)) :?>
                             <?php foreach ($commentList as $comment) :?>
-                            <ul class="media-list">
-                                <li class="media">
-                                    <div class="media-body">
-                                        <div class="media-heading">
-                                            <a href="/user/<?=$comment['user_id'] ?>" class="author">Имя: <?= $comment['commentator_name'] ?></a>
-                                            <div class="metadata">
-                                                <span class="date"><?= $comment['comment_data'] ?></span>
+                                <ul class="media-list">
+                                    <li class="media">
+                                        <div class="media-body">
+                                            <div class="media-heading">
+                                                <p class="author">Имя: <?= $comment['commentator_name'] ?></p>
+                                                <div class="metadata">
+                                                    <span class="date"><?= $comment['comment_data'] ?></span>
+                                                </div>
+
                                             </div>
+                                            <p><?= $comment['comment_text'] ?></p>
                                         </div>
-                                    </div>
-                                </li>
-                                <div class="media-text text-justify"><?= $comment['comment_text'] ?></div>
-                                <div class="footer-comment">
-                                <span class="vote plus" title="Нравится">
+                                    </li>
+                                </ul>
+                            <?php endforeach ;?>
+                            <?php echo $pagination->get(); ?>
+                        <?php else :?>
+                            <p1>Комментариев пока нет!</p1>
+                        <?php endif; ?>
 
-                                </span>
-                                    <span class="rating">
-                            <a href="../respect/<?=$product['id'] ?>/<?= $comment['id'] ?>" class="rating"><i class="fa fa-thumbs-up"></i><?= $comment['respect'] ?>+</a>
-                        </span>
-                                </div>
-                        </div>
+                    </div>
+
+
                 </div>
-                <hr>
-                <?php endforeach ;?>
 
-                <?php echo $pagination->get(); ?>
-                <?php else :?>
-                    <p1>Комментариев пока нет!</p1>
-                <?php endif; ?>
+
+
             </div>
 
         </div>

@@ -104,6 +104,15 @@ class User
         }
         header("Location: /user/login");
     }
+    public static function isLogged()
+    {
+
+        if(isset($_SESSION["user"]))
+        {
+            return $_SESSION['user'];
+        }
+
+    }
     
     public static function isGuest()
     {

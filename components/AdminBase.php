@@ -14,4 +14,14 @@ abstract class AdminBase
         }
         die("Access denied");
     }
+    public static function isAdmin(){
+        $userId = User::isLogged();
+
+        $user = User::getUserById($userId);
+
+        if($user['role'] == 'admin')
+        {
+            return true;
+        }
+    }
 }

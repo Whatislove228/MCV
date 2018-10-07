@@ -29,12 +29,12 @@
 
                     <?php if ($productsInCart): ?>
                         <p>Вы выбрали такие товары:</p>
-                        <table class="table-bordered table-striped table">
+                        <table style="font-size: 12px!important;" class="table-bordered table-striped table">
                             <tr>
-                                <th>Код товара</th>
+                                <th>Артикул</th>
                                 <th>Название</th>
-                                <th>Стомость, $</th>
-                                <th>Количество, шт</th>
+                                <th>Цена</th>
+                                <th>Кол-во</th>
                                 <th>Удалить</th>
                             </tr>
                             <?php foreach ($products as $product): ?>

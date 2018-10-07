@@ -1,35 +1,36 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
-<body>
-<div> </div>
-<div class="container">
-<div class="row">
-<div class="col-md-4"> </div>
-<div class="col-md-4">
-   <h4>Форма обратной связи</h4>
-   <form action="./mail.php" method="post">
-<div class="form-group">
-   <label for="name">Ваше имя:</label>
-   <input type="name" name="name" class="form-control" id="name" placeholder="Name">
-</div>
-<div class="form-group">
-   <label for="email1">E-mail:</label>
-   <input type="email" name="email" class="form-control" id="email1" placeholder="Email">
-</div>
-<div class="form-group">
-   <label for="phone">Номер телефона:</label>
-   <input type="phone" name="phone" class="form-control" id="phone" placeholder="Phone">
-</div>
-<div class="form-group">
-   <label for="message">Сообщение:</label>
-   <textarea class="form-control" name="message" rows="3"></textarea>
-</div>
-   <button type="submit" class="btn btn-info">Отправить сообщение</button>
-</form>
-</div>
-<div class="col-md-4"> </div> </div>
-</div>
-</body>
-</html>
+<title>Contact</title>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Каталог</h2>
+                        <div class="panel-group category-products">
+                            <?php foreach ($categories as $categoryItem): ?>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a href="/category/<?php echo $categoryItem['id'];?>">
+                                        <?php echo $categoryItem['name'];?>
+                                     </a>
+                                 </h4>
+                             </div>
+                         </div>
+                        <?php endforeach; ?>
+                     </div>
+                 </div>
+            </div>
+            <div class="col-sm-9 padding-right">
+                <div class="contact-info"><!--product-details-->
+                    <h1>Наши контакты</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

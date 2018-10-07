@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        
         <link href="/template/css/bootstrap.min.css" rel="stylesheet">
         <link href="/template/css/font-awesome.min.css" rel="stylesheet">
         <link href="/template/css/prettyPhoto.css" rel="stylesheet">
@@ -14,13 +13,19 @@
         <link href="/template/css/main.css" rel="stylesheet">
         <link href="/template/css/responsive.css" rel="stylesheet">
         <script src="/template/js/jquery.js" type="text/javascript"></script>
+        <script src="/template/js/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/template/js/jquery-ui.css">
         <script src="/template/js/jquery.maskedinput.js" type="text/javascript"></script>
         <script src="/template/js/main.js" type="text/javascript"></script>
+        <?php include "schema.php"?>
         <link rel="shortcut icon" href="/template/images/apple.svg">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/template/images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/template/images/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/template/images/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="/template/images/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/ui-lightness/jquery-ui.css">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.min.js"></script>
     </head><!--/head-->
 
     <body>
@@ -53,6 +58,9 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
+                                    <?php if(AdminBase::isAdmin()) :?>
+                                    <li><a href="/admin"><i class="fa fa-admin"></i> Админпанель</a></li>
+                                    <?php endif;?>
                                     <li><a href="/cart"><i class="fa fa-shopping-cart"></i><span id="cart-count"><?php echo Cart::countItems()?></span> Корзина</a></li>
                                     <?php if(User::isGuest()) :?>
                                         <li><a href="/user/login"><i class="fa fa-user"></i> Вход</a></li>
@@ -61,6 +69,9 @@
                                         <li><a href="/account/index"><i class="fa fa-user"></i> Аккаунт</a></li>
                                         <li><a href="/user/logout"><i class="fa fa-unlock"></i> Выход</a></li>
                                     <?php endif;?>
+                                        <li>
+                                                    <input style="margin-top: 5px" type="text" id="engine" class="form-control input-sm"  placeholder="Search" />
+                                        </li>
                                 </ul>
                             </div>
                         </div>
@@ -93,5 +104,4 @@
                     </div>
                 </div>
             </div><!--/header-bottom-->
-
         </header><!--/header-->

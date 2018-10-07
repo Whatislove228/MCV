@@ -238,9 +238,14 @@ a#scrollUp i{
 	font-weight: 300;
 	padding: 0;
 	padding-bottom: 10px;
-    padding-left: 40px;
 }
 
+@media (min-width: 468px) {
+  .mainmenu ul li a {
+    padding-left: 40px;
+  }
+
+}
 .mainmenu ul li a:hover, .mainmenu ul li a.active,  .shop-menu ul li a.active{
 	background:none;
 	color:#fdb45e;
@@ -2548,5 +2553,8 @@ h2.title {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   margin-bottom: 25px;
+}
+.contact-info h1 {
+  text-align: center;
 }
 
